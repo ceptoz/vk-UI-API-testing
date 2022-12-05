@@ -7,9 +7,6 @@ import aquality.selenium.elements.interfaces.ITextBox;
 import aquality.selenium.forms.Form;
 import org.openqa.selenium.By;
 
-import static utils.Constants.PATH_TO_CREDENTIALS;
-import static utils.JSONJacksonProcessorUtils.getValueFromJSONMap;
-
 public class WelcomePage extends Form {
     private final ITextBox loginField = getElementFactory()
             .getTextBox(By.xpath("//input[@name='login']"), "Login field");

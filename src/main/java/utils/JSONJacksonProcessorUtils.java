@@ -15,8 +15,6 @@ public class JSONJacksonProcessorUtils {
 
     public static final ObjectMapper MAPPER = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-    public JSONJacksonProcessorUtils() {}
-
     public static String readJSONFileToString(Path path) {
         try {
             return Files.readString(path);
