@@ -1,5 +1,8 @@
 package utils;
 
+import aquality.selenium.browser.AqualityServices;
+import aquality.selenium.core.utilities.ISettingsFile;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -7,10 +10,9 @@ import static utils.JSONJacksonProcessorUtils.getValueFromJSONMap;
 
 public class Constants {
     private static final String RESOURCES_PATH = "src/main/resources";
-    public static final Path PATH_TO_CREDENTIALS = Paths.get(String.format("%s/user_credentials.json", RESOURCES_PATH));
     public static final Path PATH_TO_TEST_DATA = Paths.get(String.format("%s/test_data.json", RESOURCES_PATH));
     public static final Path PATH_TO_VK_METHODS = Paths.get(String.format("%s/vk_methods.json", RESOURCES_PATH));
-    public static final String TOKEN = getValueFromJSONMap(PATH_TO_CREDENTIALS, "token");
+    public static final String TOKEN = (String) AqualityServices.get(ISettingsFile .class).getValue("/token");
     public static final String API_VERSION = getValueFromJSONMap(PATH_TO_TEST_DATA, "apiVersion");
     public static final String WRAPPER = getValueFromJSONMap(PATH_TO_TEST_DATA, "wrapper");
     public static final String PATH_TO_PICTURE = Paths

@@ -1,5 +1,7 @@
 package forms.pages;
 
+import aquality.selenium.browser.AqualityServices;
+import aquality.selenium.core.utilities.ISettingsFile;
 import aquality.selenium.elements.interfaces.IButton;
 import aquality.selenium.elements.interfaces.ITextBox;
 import aquality.selenium.forms.Form;
@@ -19,7 +21,7 @@ public class WelcomePage extends Form {
     }
 
     public void enterLoginAndSignIn() {
-        loginField.clearAndType(getValueFromJSONMap(PATH_TO_CREDENTIALS, "login"));
+        loginField.clearAndType((String) AqualityServices.get(ISettingsFile.class).getValue("/login"));
         enterBtn.clickAndWait();
     }
 }

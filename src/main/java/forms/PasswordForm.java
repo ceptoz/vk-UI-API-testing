@@ -1,12 +1,11 @@
 package forms;
 
+import aquality.selenium.browser.AqualityServices;
+import aquality.selenium.core.utilities.ISettingsFile;
 import aquality.selenium.elements.interfaces.IButton;
 import aquality.selenium.elements.interfaces.ITextBox;
 import aquality.selenium.forms.Form;
 import org.openqa.selenium.By;
-import utils.JSONJacksonProcessorUtils;
-
-import static utils.Constants.PATH_TO_CREDENTIALS;
 
 public class PasswordForm extends Form {
 
@@ -20,7 +19,7 @@ public class PasswordForm extends Form {
     }
 
     public void enterPasswordAndProceed() {
-        passwordField.clearAndType(JSONJacksonProcessorUtils.getValueFromJSONMap(PATH_TO_CREDENTIALS, "password"));
+        passwordField.clearAndType((String) AqualityServices.get(ISettingsFile.class).getValue("/password"));
         continueBtn.clickAndWait();
     }
 }
