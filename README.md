@@ -7,6 +7,6 @@ Used libraries:
 - aquality-selenium (framework that simplifies Selenium webdriver using);
 - rest-assured (library for HTTP-requests and responses);
 - testng (testing framework);
-- lombok (porject for simplifying class creation);
+- lombok (project for simplifying class creation);
 - jackson-databind (defines logic for JSON and XML formats processing);
 - imageComparison (interesting and simple library for image comparisons).
